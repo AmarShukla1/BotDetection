@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block css %}
+rel="stylesheet" href="static/style.css"
+{% endblock css %}
+
+{%block body%}
+ <div class="login">
+	<h1>Bot Detector📰  </h1>
+
+    <form action="./potential" method="POST">
+		{% csrf_token %}
+    	<textarea  name="search" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
+		<br> </br>
+        <button type="submit"  class="btn btn-primary btn-block btn-large">Predict</button>
+
+        	<div class="results">
+
+	{% if prediction == 1%}
+	<h2 style="color:red;">Its a bot📰 </h2>
+	{% elif prediction == 0%}
+				<h2 style="color:green;"><b>Its a human</b></h2>
+	{% endif %}
+
+	</div>
+
+    </form>
+
+</div>
+{%endblock body%}

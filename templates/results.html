@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block css %}
+rel="stylesheet" href="static/list.css"
+{% endblock css %}
+{%block body%}
+<pre>
+<div class="king">
+    <link rel="stylesheet" href="static/code.css"/>
+    <div class="card" >
+      <div class="banner">
+          <img src={{links}} />
+      </div>
+      <div class="menu">
+        <div class="opener"><span></span><span></span><span></span></div>
+      </div>
+      <h2 class="name">{{name}}</h2>
+     
+      <div class="actions">
+        <div class="follow-info">
+          <h2><a href="#"><span>{{followers}}</span><small>Followers</small></a></h2>
+          <h2><a href="#"><span>{{following}}</span><small>Following</small></a></h2>
+        </div>
+      
+      </div>
+      <div class="desc" >{{desc}}</div>
+    </div>
+</pre>
+         <h1 style="margin-left:150px">Tweets</h1></pre>
+<main>
+    <ol class="gradient-list">
+        {% for l in link %}
+        <li>{{l}}</li>
+        {%endfor%}
+    </ol>
+</main>
+<!user properties-->
+<div>
+    
+</div>
+</div>
+{%endblock body%}
